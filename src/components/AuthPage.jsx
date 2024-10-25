@@ -1,8 +1,11 @@
 
+import Login from "./Login";
+
 const AuthPage =()=>{
     return (
-        <div>
-            Authpage
+        <div className="Authpage">
+           
+           <Login/>
         </div>
     );
 }

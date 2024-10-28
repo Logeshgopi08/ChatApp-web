@@ -2,9 +2,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Body from "./components/Body";
 import ChatPage from "./components/ChatPage";
 import AuthPage from "./components/AuthPage";
+import { Provider } from "react-redux";
+import appStore from "./utlis/appStore";
+
 
 
 function App() {
+  
 
   const appRouter = createBrowserRouter([
     {
@@ -17,7 +21,7 @@ function App() {
         },
         {
           path:"/auth",
-          element:<AuthPage/>
+          element:<AuthPage />
         },
         {
           path:"/editprofile",
@@ -27,9 +31,11 @@ function App() {
     }
   ])
   return (
+    <Provider store={appStore}>
     <div className="App">
       <RouterProvider router={appRouter}/>
     </div>
+    </Provider>
   );
 }
 
